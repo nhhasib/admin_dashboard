@@ -4,9 +4,9 @@ import Navbar from '../component/dashboard/navbar/navbar';
 
 const layout = ({children}) => {
     return (
-        <div>
-            <div><Sidebar></Sidebar></div>
-            <div><Navbar></Navbar>
+        <div className='grid grid-cols-5'>
+            <div className='col-span-1 bg-slate-800'><Sidebar></Sidebar></div>
+            <div className='col-span-4'><Navbar></Navbar>
             {children}
             </div>
         </div>

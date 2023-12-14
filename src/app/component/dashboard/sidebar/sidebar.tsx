@@ -23,7 +23,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                       height={64} width={200}
                       src={logo}
                     /> */}
-                    <h1>nhhasib</h1>
+                   
                   </Link>
       </div>
 
@@ -72,7 +72,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
               <CreditCardIcon className="h-5 w-5" />
             </div>
             <div>
-              <p>Billing</p>
+              <p>Add task</p>
             </div>
           </div>
         </Link>

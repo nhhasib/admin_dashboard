@@ -31,7 +31,7 @@ const DashboardLayout = ({children}) => {
 
 
     return (
-      <div className="bg-gray-100">
+      <div className="bg-white gap-6">
       
 
       <TopBar showNav={showNav} setShowNav={setShowNav} />

@@ -18,12 +18,11 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                     className="hidden items-center gap-1 tablet:flex"
                     onClick={() => setMenuItem('')}
                   >
-                   {/* <Image
+                   <Image
                       alt="faten-boutique"
-                      height={64} width={200}
+                      height={32} width={200}
                       src={logo}
-                    /> */}
-                   
+                    />
                   </Link>
       </div>
 
@@ -60,7 +59,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </div>
           </div>
         </Link>
-        <Link href="dashboard/addproduct">
+        <Link href="dashboard/addProduct">
           <div
             className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${
               router.pathname == "/billing"

@@ -7,7 +7,7 @@ export default function Home() {
       <div>
       <h1>Homepage
       </h1>
-      <Link href={"/dashboard"}><button>Dashboard</button></Link>
+      <Link href={"/dashboard"}><button className='border bg-black text-white'>Dashboard</button></Link>
       </div>
     </main>
   )

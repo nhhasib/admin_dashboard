@@ -1,11 +1,11 @@
-'use client'
+"use client"
 import { useState, useEffect, Fragment } from "react";
-import TopBar from '../component/dashboard/navbar/navbar';
-import SideBar from "../component/dashboard/sidebar/sidebar"
-import { Transition } from "@headlessui/react";
 
-const DashboardLayout = ({children}) => {
- 
+import { Transition } from "@headlessui/react";
+import TopBar from "../component/dashboard/navbar/navbar";
+import SideBar from "../component/dashboard/sidebar/sidebar";
+
+export default function DashboardLayout({ children }) {
   const [showNav, setShowNav] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -29,15 +29,10 @@ const DashboardLayout = ({children}) => {
     };
   }, []);
 
-
-    return (
-      <div className= "gap-20">
-
-      <div>
+  return (
+    <div>
       <TopBar showNav={showNav} setShowNav={setShowNav} />
-      </div>
-     <div>
-     <Transition
+      <Transition
         as={Fragment}
         show={showNav}
         enter="transform transition duration-[400ms]"
@@ -47,9 +42,8 @@ const DashboardLayout = ({children}) => {
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
       >
-        <SideBar showNav={showNav}/>
+        <SideBar showNav={showNav} />
       </Transition>
-     </div>
       <main
         className={`pt-16 transition-all duration-[400ms] ${
           showNav && !isMobile ? "pl-56" : ""
@@ -57,10 +51,6 @@ const DashboardLayout = ({children}) => {
       >
         <div className="px-4 md:px-16">{children}</div>
       </main>
-      
-      </div>
-     
-    )
-  }
-  
-  export default DashboardLayout
+    </div>
+  );
+}

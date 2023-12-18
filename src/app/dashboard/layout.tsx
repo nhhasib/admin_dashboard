@@ -31,11 +31,13 @@ const DashboardLayout = ({children}) => {
 
 
     return (
-      <div className="bg-white gap-6">
-      
+      <div className= "gap-20">
 
+      <div>
       <TopBar showNav={showNav} setShowNav={setShowNav} />
-      <Transition
+      </div>
+     <div>
+     <Transition
         as={Fragment}
         show={showNav}
         enter="transform transition duration-[400ms]"
@@ -47,6 +49,7 @@ const DashboardLayout = ({children}) => {
       >
         <SideBar showNav={showNav}/>
       </Transition>
+     </div>
       <main
         className={`pt-16 transition-all duration-[400ms] ${
           showNav && !isMobile ? "pl-56" : ""

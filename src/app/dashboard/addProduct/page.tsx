@@ -1,22 +1,23 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React from "react"
+import { useForm, SubmitHandler } from "react-hook-form"
 
-const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
-    return (
-        <div>
-            <form onSubmit={handleSubmit(()=>onSubmit)}>
+type FormValues = {
+  firstName: string
+  lastName: string
+  email: string
+}
+
+export default function App() {
+  const { register, handleSubmit } = useForm<FormValues>()
+  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data)
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("firstName")} />
-      <select {...register("gender")}>
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="other">other</option>
-      </select>
+      <input {...register("lastName")} />
+      <input type="email" {...register("email")} />
+
       <input type="submit" />
     </form>
-        </div>
-    );
-};
-
-export default AddProduct;
+  )
+}

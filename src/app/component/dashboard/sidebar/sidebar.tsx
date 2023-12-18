@@ -12,17 +12,17 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
   return (
     <div ref={ref} className="fixed w-56 h-full bg-white shadow-sm">
-      <div className="flex justify-center mt-6 mb-14 border">
+      <div className="flex justify-center mt-6 mb-14">
       <Link
                     href="/"
-                    className="hidden items-center gap-1 tablet:flex"
+                    className="items-center gap-1 tablet:flex"
                     onClick={() => setMenuItem('')}
                   >
-                   {/* <Image
+                   <Image
                       alt="faten-boutique"
-                      height={64} width={200}
+                      height={32} width={150}
                       src={logo}
-                    /> */}
+                    />
                    
                   </Link>
       </div>
@@ -77,6 +77,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
           </div>
         </Link>
       </div>
+      
     </div>
   );
 });
